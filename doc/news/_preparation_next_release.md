@@ -85,6 +85,10 @@ The following section lists news about the [plugins](https://www.libelektra.org/
 - <<TODO>>
 - <<TODO>>
 
+### Length
+
+- Warnings are now added on `kdb get` _(@mandoway)_
+
 ### <<Plugin>>
 
 - <<TODO>>
@@ -181,6 +185,10 @@ you up-to-date with the multi-language support provided by Elektra.
 - Added withKDB() extension which wraps the try block _(@Gratla)_
 - Added forEachKeyName() extension which iterates like in keyNameIterator _(@mandoway)_
 
+### Python
+
+- Deleted occurrences of removed property key.fullname _(@mandoway)_
+
 ## Tools
 
 ### elektrad
@@ -238,6 +246,7 @@ you up-to-date with the multi-language support provided by Elektra.
 - Extend and update the tutorial for writing specifications,
   add section about using specs in production _(Florian Lindner @flo91)_
 - <<TODO>>
+- Add readme-file about cm2022s project (/doc/dev/iterators.md) _(Florian Lindner @flo91)_
 - <<TODO>>
 - <<TODO>>
 - <<TODO>>
