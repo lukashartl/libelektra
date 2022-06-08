@@ -37,6 +37,7 @@ docker run -it elektra/elektra
 - <<HIGHLIGHT>>
 - <<HIGHLIGHT>>
 - <<HIGHLIGHT>>
+- New Binding for Kotlin with convenience functions and various utilities. There is also the possibility to convert KeySets to Kotlin data classes or collections and back. _(@Gratla & @mandoway)_
 
 ### <<HIGHLIGHT>>
 
@@ -47,6 +48,8 @@ docker run -it elektra/elektra
 ## Plugins
 
 The following section lists news about the [plugins](https://www.libelektra.org/plugins/readme) we updated in this release.
+
+- Change all plugins, except `directoryvalue` to use external iteration of `KeySet`s _(Florian Lindner @flo91)_
 
 ### Python
 
@@ -119,7 +122,7 @@ The text below summarizes updates to the [C (and C++)-based libraries](https://w
 
 ### Core
 
-- <<TODO>>
+- Remove `keyRewindMeta`, `keyCurrentMeta`, `ksHead`, and `ksTail` functions for internal iteration of `Keyset`s and Metadata of `Key`s _(Florian Lindner @flo91)_
 - <<TODO>>
 - <<TODO>>
 - <<TODO>>
@@ -152,6 +155,8 @@ The text below summarizes updates to the [C (and C++)-based libraries](https://w
 Bindings allow you to utilize Elektra using [various programming languages](https://www.libelektra.org/bindings/readme). This section keeps
 you up-to-date with the multi-language support provided by Elektra.
 
+- Remove internal iterators for SWIG (Python, Lua, Ruby) and go-bindings _(Florian Lindner @flo91)_
+
 ### Java
 
 - Added a java example for meta keys and arrays _(@mandoway)_
@@ -177,13 +182,15 @@ you up-to-date with the multi-language support provided by Elektra.
 ### Kotlin
 
 - Added new JNA subproject which builds an Elektra extension library for Kotlin _(@mandoway & @Gratla)_
-- Added get(), getOrNull(), getOrDefault(), getOrElse() extension with type inference for primitive types _(@mandoway)_
+- Added get(), getOrNull() extension with type inference for primitive types _(@mandoway)_
 - Added set() extension with type inference for primitive types _(@mandoway)_
-- Added keySet serialization capabilities (to JSON and data classes, with array support) _(@mandoway)_
+- Added keySet serialization capabilities (to any format and data classes, with array support) _(@mandoway)_
 - Added keyOf() extension and keyOf{} builder for key creation _(@Gratla)_
 - Added keySetOf() extension and keySetOf{} builder for keySet creation _(@Gratla)_
 - Added withKDB() extension which wraps the try block _(@Gratla)_
-- Added forEachKeyName() extension which iterates like in keyNameIterator _(@mandoway)_
+- Added nameParts extension value which provides a sequence of key name parts _(@mandoway)_
+- Added various utility functions like Key.isEmpty, Key.getMetaOrNull, ... _(@Gratla & @mandoway)_
+- Added example project for kotlin binding _(@Gratla & @mandoway)_
 
 ### Python
 
@@ -194,7 +201,7 @@ you up-to-date with the multi-language support provided by Elektra.
 ### elektrad
 
 - improve logging in `elektrad` _(Lukas Hartl @lukashartl, Leonard Guelmino @leothetryhard)_
-- <<TODO>>
+- Update `elektrad` to use last version of the `go`-bindings without internal iterators for `Keyset`s and Metadata _(Florian Lindner @flo91)_
 - <<TODO>>
 
 ### `webui`
@@ -228,7 +235,7 @@ you up-to-date with the multi-language support provided by Elektra.
 - <<TODO>>
 - <<TODO>>
 - <<TODO>>
-- <<TODO>>
+- Fix `kdb reset`. _(Markus Raab)_
 - <<TODO>>
 - <<TODO>>
 - <<TODO>>
@@ -246,8 +253,8 @@ you up-to-date with the multi-language support provided by Elektra.
 - Extend and update the tutorial for writing specifications,
   add section about using specs in production _(Florian Lindner @flo91)_
 - <<TODO>>
-- Add readme-file about cm2022s project (/doc/dev/iterators.md) _(Florian Lindner @flo91)_
-- <<TODO>>
+- Add readme-file [Iterators](/doc/dev/iterators.md) about cm2022s project showcasing usage in various programming languages _(Florian Lindner @flo91 and @Milangs)_
+- Remove usage of internal iterators from the examples
 - <<TODO>>
 - <<TODO>>
 - Improve jna documentation _(Burkhard Hampl @bhampl)_
